@@ -20,7 +20,7 @@ void DestroyHeap(Heap*);
 void PercolateDown(Heap*, int);
 void BuildHeap(Heap*, int[], int);
 void HeapSort(int[], int);
-void PrintHeap(Heap*, int);
+static void PrintHeap(Heap*, int);
 
 #endif // !PRIORITYQUEUE_H
 
