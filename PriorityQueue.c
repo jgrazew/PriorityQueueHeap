@@ -95,7 +95,7 @@ void PercolateDown(Heap* theHeap, int i)
 	int leftChild = GetLeftChild(theHeap, i);
 	int rightChild = GetRightChild(theHeap, i);
 
-	if (leftChild != -1 && theHeap->array[leftChild] > theHeap->array[rightChild])
+	if (leftChild != -1 && theHeap->array[leftChild] > theHeap->array[i])
 		max = leftChild;
 	else
 		max = i;
@@ -134,10 +134,10 @@ void BuildHeap(Heap* theHeap, int arr[], int lengthOfArray)
 void HeapSort(int arr[], int lengthOfArray)
 {
 	Heap* theHeap = CreateNewHeap(lengthOfArray, Max);
-	int oldSize, temp, i;
+	int oldSize, temp;
 	BuildHeap(theHeap, arr, lengthOfArray);
 	oldSize = theHeap->countOfElements;
-	for (i = lengthOfArray - 1; i > 0; i--)
+	for (int i = lengthOfArray - 1; i > 0; i--)
 	{
 		//index 0 is the largest element
 		//swap -move current root to the end
